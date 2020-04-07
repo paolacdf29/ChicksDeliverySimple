@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-xl-8 col-lg-8 col-md-10 col-sm-12 ">
+            <div class="card bg-light mb-3">
+            <div class="card-header">Items del pedido</div>
+            <div class="card-body">
+                <p>{{msj}}</p>
+                <h4 class="text-center mb-5 mt-5">Order #{{order}}</h4>
+                <table class="table table-center mt-5 rtable">
+                    <thead class="text-center rthead">
+                        <tr class="rtr">
+                            <th class="rth">Items</th>
+                            <th class="rth">Cantidad</th>
+                            <th class="rth">Comentarios</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center rtbody">
+                        {{#each product}}
+                        <tr class="rtr">
+                            <td class="rtd">{{Nombre}}</td>
+                            <td class="rtd">{{canti}}</td>
+                            <td class="rtd">{{comentario}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                <p>delivery cost: $$</p>
+                <h2>Total: ${{check}}</h4>
+            </div>
+            <a href="/paneladmin"><button class="button btn btn-success btn-block mt-5 mb-5">Back to panel </button></a>
+        </div>
+    </div>
+</div>

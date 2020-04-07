@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class='imgSmall' src="/images/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/step1">Step 1</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/step2">Step 2</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/step3">Step 3</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/step4">Step 4</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/login/logout" style="color: grey">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>{{nombre}}</h1>
+            </div>
+        </div>
+        <div class="row bg-dark">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mt-5">
+                <img src="/images/{{foto}}" class="card-img-top">
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 bg-dark text-white" >
+                <main class="mt-5">{{descripcion}}</p>
+                <p class="mt-2">Cost: $ {{precio}}</p>
+                <form action="/addproduct" method="POST">
+                    <input type="number" name="id_p" class="form-control" value="{{id_p}}" hidden>
+                    <label for="comentarios" class="mt-2">Coments</label>
+                    <input type="text" class="form-control" placeholder="Coments" name="comentarios">
+                    <label for="cantidad" class="mt-2">Quantity</label>
+                    <input type="number" class="form-control" placeholder="Number" name="cantidad" value="1">
+                    <a href="/addproduct"><button type="submit" class="btn btn-success btn-block mt-5 mb-2"> ADD </button></a>
+                </form>
+                <a href="/step1"><button class="btn btn-dark btn-block mb-5">Back</button></a>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="cotainer-fluid">
+    <div class="row">
+        <div class="col"><p>{{msj}}</p></div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 bg-warning pr-5 pl-5" style="background: rgba(0, 0, 0, 0.267); color: black"> 
+            <h4 class="text-center mb-5 mt-5">Order #{{order}}</h4>
+            <table class="table table-center mt-5">
+                <thead class="text-center">
+                    <tr>
+                        <th>Items</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Editar</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {{#each product}}
+                    <tr>
+                        <td>{{Nombre}}</td>
+                        <td>{{canti}}</td>
+                        <td>{{precio}}</td>
+                        <td><a href="/step1/carrito/delete/{{id_pc}}"><button class="btn btn-dark" type="button" onclick="delItem({{id_pc}})">Delete</button></a></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <p>delivery cost: $$</p>
+            <h4>Total: ${{check}}</h4>
+            <div class="row">
+                <div class="col-4 mb-5"><a href="/step1"><button class="btn btn-success btn-block">Back</button></a></div>
+                <div class="col-8 mb-5"><a href="/step2"><button class="btn btn-success btn-block">Next</button></a></div>
+            </div>
+        </div>
+    </div>
+</div>

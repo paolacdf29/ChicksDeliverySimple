@@ -1,0 +1,21 @@
+<div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-xl-8 col-lg-8 col-md-10 col-sm-12 ">
+                <div class="card bg-light mb-3">
+                <div class="card-header">User info</div>
+                <div class="card-body">
+                {{#each admin}}
+                    <h5 class="card-title text-center h5">{{Nombre_client}} {{Apellido_client}}</h5>
+                    <a href="/registro/editar" style="font-size: 20px"><i class="far fa-edit"></i></a>
+                    <p>Name: {{Nombre_client}} {{Apellido_client}}</p>
+                    <p>Adresss: {{direccion_client}}</p>
+                    <p>Phone number: {{Telefono_client}}</p>
+                    <p>Email: {{mail_client}}</p>
+                    <a href="/userconf/changepass" class="">Change password</a>
+                {{/each}}
+                </div>
+                <a href="/paneladmin"><button class="button btn btn-success btn-block mt-5 mb-5">Back to panel </button></a>
+
+            </div>
+        </div>
+    </div>

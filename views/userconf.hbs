@@ -1,0 +1,35 @@
+ <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-xl-8 col-lg-8 col-md-10 col-sm-12 ">
+                <div class="card bg-light mb-3" >
+                <div class="card-header">User info</div>
+                <div class="card-body">
+                {{#each usuario}}
+                    <h5 class="card-title text-center h5">{{Nombre_client}} {{Apellido_client}}</h5>
+                    <p class="tituloseccion text-center" >Stamps</p>
+                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                    <button class="button btn btn-black">Last orders</button>
+                    <p class="tituloseccion text-center" >Data</p>
+                    <a href="/registro/editar" style="font-size: 20px"><i class="far fa-edit"></i></a>
+                    <p>Name: {{Nombre_client}} {{Apellido_client}}</p>
+                    <p>Adresss: {{direccion_client}}</p>
+                    <p>Phone number: {{Telefono_client}}</p>
+                    <p>Email: {{mail_client}}</p>
+                    <a href="/userconf/changepass" class="">Change password</a>
+                {{/each}}
+                    <p class="mt-3">Finished orders: {{forders}}</p>
+                <p class="tituloseccion text-center" >Favorite foods</p>
+                {{#each favs}}
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                {{/each}}
+                <a href="/start"><button class="button btn btn-success mt-5">Back to start</button></a>
+                </div>
+
+            </div>
+        </div>
+    </div>

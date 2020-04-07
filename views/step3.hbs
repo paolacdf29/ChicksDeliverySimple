@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class='imgSmall' src="/images/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/step1">Step 1</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/step2">Step 2</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link active" href="/step3">Step 3</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/step4">Step 4</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/login/logout" style="color: grey">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="cotainer-fluid margins">
+    <div class="row mb-3">
+        <div class="col-xl-10 col-lg-10 col-md-6 col-sm-6">
+            <h1 class="h2">{{title}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col"><p>{{msj}}</p></div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 px-5  bg-warning card" > 
+            <h4 class="text-center mb-5 mt-5">Order #{{order}}</h4>
+            <h4>Client info</h4>
+            {{#each client}}
+                <p>Name: {{Nombre_client}}</p>
+                <p>Delivery address: {{direccion_client}}</p>
+            {{/each}}
+
+            <table class="table table-center mt-5 ">
+                <thead class="text-center ">
+                    <tr class="">
+                        <th class="">Items</th>
+                        <th class="">Quantity</th>
+                        <th class="">Price</th>
+                        <th class="">Edit</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center ">
+                    {{#each product}}
+                    <tr class="">
+                        <td class="">{{Nombre}}</td>
+                        <td class="">{{canti}}</td>
+                        <td class="">{{precio}} $</td>
+                        <td class=""><a href="/step3/delete/{{id_pc}}"><button class="btn btn-dark" type="button">X</button></a></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <p>delivery cost: $$</p>
+            <h4>Total: ${{check}}</h4>
+            <div class="row mb-5">
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mt-2"><a href="/step2"><button class="btn btn-success btn-block">Back</button></a></div>
+                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 mt-2"><a href="/step3/ready"><button class="btn btn-success btn-block">Confirm</button></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+

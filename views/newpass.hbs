@@ -1,0 +1,18 @@
+<div class="container-fluid" id="fondoLogin">
+    <div class="row justify-content-center mt-5" >
+            <div class="col-md-10 col-lg-7 col-xl-7 col-sm-12">
+                <h2 class="h2 text-center">Change your password here</h2>
+                <form method="POST" action="/userconf/changepass">
+                    <input type="password" required class="form-control mt-2" placeholder="Old password" name="oldpass" id="opass" onclick="showpassword()">
+                    <input type="password" required class="form-control mt-2" placeholder="New password" name="newpass1" id="np2">
+                    <input type="password" required class="form-control mt-2" placeholder="Confirm new password" name="newpass2" id="np2">
+                    <p>{{msj}}</p>
+                    <button type="submit" class="btn btn-success btn-block mt-2">Change</button>
+                </form>
+                <span class="text-danger">{{alerta}}</span>
+            </div>
+            <div class="col-md-10 col-lg-6 col-xl-6 col-sm-12 mt-2">
+                <a href="/userconf"><button class="btn btn-dark btn-block">Go back</button></a>
+            </div>
+    </div>
+</div>

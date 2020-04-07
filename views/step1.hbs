@@ -1,0 +1,52 @@
+<div class="cotainer">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Order</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/step1">Step 1 <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/step2">Step 2</a>
+                <a class="nav-item nav-link" href="/step3">Step 3</a>
+                <a class="nav-item nav-link" href="/step4">Step 4</a>
+            </div>
+        </div>
+        <a href="/userconf" class="nav-item text-rigth mr-2" style="color: grey"><i class="fas fa-cog"></i>  </a>
+        <a href="/login/logout" class="nav-item text-rigth" style="color: grey">Log out</a>
+    </nav>
+    <div class="row mb-5">
+        <div class="col-xl-10 col-lg-10 col-md-6 col-sm-6">
+            <h1 class="titulo1">{{title}}</h1>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6" style = 'font-size: 30px'><p>Order # {{order}}</p><a href="/step1/carrito"><i class="fas fa-clipboard-list" ></i> </a>{{cart}}</div>
+    </div>
+    {{#each cats}}
+    <div class="row align-items-center">
+        <div class="col-6 text-left tituloseccion mt-5 mb-5">
+            <h1 class="h1">{{nombre_cat}}</h1>
+            <p>{{descripcion_cat}}</p>
+        </div>
+    </div>
+    {{/each}}
+        
+    {{#each products}}
+    <div class="row mb-3">
+        <div class="col-xl-9 col-sm-12 card text-black bg-warning" style="height: 200px">
+            <div class="card-body">
+                <h4 class="card-title">{{Nombre}}</h4>
+                <p class="card-text">{{Descripcion}}</p>
+                <p class="card-text">{{precio}}$</p>
+                {{!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
+                <a href="/addproduct/{{id_p}}"><button type="button" class="btn btn-success">ADD</button></a>
+            </div>
+        </div>
+        {{!-- <div class="col-xl-3 col-sm-6 text-right" >
+             <img src="/images/IMG_2862.jpg" class="card-img" style="height: 200px">
+        </div> --}}
+    </div>
+    {{/each}}
+    <a href="/step2" style="color:white"><button class="btn btn-primary btn-block">Ready</button></a>
+ 
+</div>
+

@@ -1,0 +1,131 @@
+
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class='imgSmall' src="/images/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/userconf">Perfil</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class="nav-link active" href="/paneladmin">Panel</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class="nav-link" href="/paneladmin/productos">Productos</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class="nav-link" href="/kitchen">Cocina</a>
+                <li class="nav-tiem">
+                    <a href="/login/logout" class="nav-link">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-12 text-center tutuloseccion">
+            <h2 class="h2">Ordenes activas</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-8 text-right">
+            <a href="/start/admin/newdeli">
+                <p style="font-size: 20px; color: green">Nueva orden <i class="fas fa-plus"></i></p>
+            </a>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-8 col-md-10 col-sm-12">
+            {{#each alerts}}
+            <div class="alert alert-success">
+                <strong>Tienes un pedido nuevo!</strong> orden # {{id_d}} Por favor confirmalo.
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+            {{/each}}
+            <table class="table table-center table-hover rtable">
+                <thead class="table-dark rthead">
+                    <tr class="text-center rtr" >
+                        <td class='rtd'>Orden</td>
+                        <td class='rtd'>Cliente</td>
+                        <td class='rtd'>Detalles</td>
+                        <td class='rtd'>Info</td>
+                        <td class='rtd'>Confirmar</td>
+                        <td class='rtd'>Listo</td>
+                        <td class='rtd'>Enviado</td>
+                        <td class='rtd'>Completado</td>
+                        <td class='rtd'>Cancelar</td>
+                    </tr>
+                </thead>
+                <tbody class="rtbody">
+                    {{#each order}}
+                    <tr class="text-center rtr">
+                        <td class='rtd'>No.{{id_o}}</td>
+                        <td class='rtd' ><a href="/paneladmin/clientdata/{{id_c}}/{{id_o}}" style="color: white;"> <button class="btn btn-dark "> Cliente <i class="fas fa-plus"></i> </button></a></td>
+                        <td class='rtd'><a href="/paneladmin/orderpage/{{id_o}}" style="color: white;"> <button class="btn btn-dark ">Items <i class="fas fa-plus"></i> </button></a></td>
+                        <td class='rtd'><a href="/paneladmin/info/{{id_o}}" style="color: white;"> <button class="btn btn-dark ">Info <i class="fas fa-plus"></i> </button></a></td>
+                        <td class='rtd'>
+                            <a href="/paneladmin/checkit/{{id_o}}/1/1" style="{{status1}}"><i class="far fa-check-square"></i></a>
+                            <p></p>
+                        </td>
+                        <td class='rtd'>
+                            <a href="/paneladmin/checkit/{{id_o}}/2/1" style="{{status2}}"><i class="fab fa-free-code-camp"></i></a>
+                            <p></p>
+                        </td>
+                        <td class='rtd'>
+                            <a href="/paneladmin/checkit/{{id_o}}/3/1" style="{{status3}}"><i class="fas fa-biking"></i></i></a>
+                            <p></p>
+                        </td>
+                        <td class='rtd'>
+                            <a href="/paneladmin/checkit/{{id_o}}/4/1" style="{{status4}}"><i class="fas fa-check-double"></i></i></a>
+                            <p></p>
+                        </td>
+                        <td class='rtd'>
+                            <a href="/paneladmin/cancelorder/{{id_o}}"><button class="button btn-danger btn-block">Kill</button></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 text-center tutuloseccion">
+            <h2 style="font-size: 28px">Ordenes finalizadas</h2>
+        </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+        <div class="col-xl-8 col-lg-8 col-md-10 col-sm-12 text-center mb-3">
+            <a href="/paneladmin/limpiar"><button class="btn btn-success btn-block">Limpiar</button></a>
+        </div>
+    </div>
+    <div class="row justify-content-center ">
+        <div class="col-xl-8 col-lg-8 col-md-10 col-sm-12">
+            <table class="table table-center">
+                <thead class="table-dark">
+                    <tr class="text-center">
+                        <td>Cliente</td>
+                        <td>Dirección</td>
+                        <td>Detalles</td>
+                        <td>Hora inicio</td>
+                    </tr>
+                </thead>
+                <tbody>
+                     {{#each forders}}
+                    <tr class="text-center">
+                        <td>{{nombre_c}}</td>
+                        <td>{{direccion_c}}</td>
+                        <td><a href="/order/{{id_o}}" style="color: white;"> <button class="btn btn-primary btn-block"> ver mas </button></a></td>
+                        <td>{{hora_o}}</td> 
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

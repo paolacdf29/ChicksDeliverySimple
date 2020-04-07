@@ -1,0 +1,128 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/perfilrest">11 Chicks</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/perfiladmin" >DamaryB <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="/paneladmin">Panel</a>
+                <a class="nav-item nav-link" href="/paneladmin/productos">Productos</a>
+                <a class="nav-item nav-link" href="/kitchen">Cocina</a>
+            </div>
+        </div>
+        <a href="/login/logout" class="nav-item text-rigth" style="color: grey">Log out</a>
+
+    </nav>
+    <div class="row mt-5">
+        <div class="col-12 text-center tutuloseccion">
+            <h2 style="font-size: 28px">Ordenes activas</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-8 text-right">
+            <a href="/start/admin/newdeli">
+                <p style="font-size: 20px; color: green">ADD new order <i class="fas fa-plus"></i></p>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <table class="table table-center">
+                <thead class="table-dark">
+                    <tr class="text-center">
+                        <td>Client</td>
+                        <td>Dirección</td>
+                        <td>Telefono</td>
+                        <td>Order #</td>
+                        <td>Coments</td>
+                        <td>Detalles</td>
+                        <td>Hora</td>
+                        <td>Confirm</td>
+                        <td>Ready</td>
+                        <td>Sent</td>
+                        <td>Complete</td>
+                        <td>Cancel</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each order}}
+                    <tr class="text-center">
+                        <td>{{nombre_c}}</td>
+                        <td>{{direccion_c}}</td>
+                        <td>{{tlf_c}}</td>
+                        <td>{{id_o}}</td>
+                        <td>{{Coments}}</td>
+                        <td><a href="/paneladmin/orderpage/{{id_o}}" style="color: white;"> <button class="btn btn-primary btn-block"> ver mas </button></a></td>
+                        <td style="color:green; font-size: 10px;">{{hora_o}}</td>
+
+                        <td>
+                            <a href="/paneladmin/checkit/{{id_o}}/1/1" style="{{status1}}"><i class="far fa-check-square"></i></a>
+                            <p></p>
+                        </td>
+                        
+                        <td>
+                            <a href="/paneladmin/checkit/{{id_o}}/2/1" style="{{status2}}"><i class="far fa-check-square"></i></a>
+                            <p></p>
+                        </td>
+
+                        <td>
+                            <a href="/paneladmin/checkit/{{id_o}}/3/1" style="{{status3}}"><i class="far fa-check-square"></i></a>
+                            <p></p>
+                        </td>
+
+                        <td>
+                            <a href="/paneladmin/checkit/{{id_o}}/4/1" style="{{status4}}"><i class="far fa-check-square"></i></a>
+                            <p></p>
+                        </td>
+                        <td>
+                            <a href="/paneladmin/cancelorder/{{id_o}}"><button class="button btn-danger btn-block">Kill</button></a>
+                            {{!-- <div class="btn-group">
+                                <button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Kill
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    <a class="dropdown-item" href="/paneladmin/cancelorder/{{id_o}}/1">Items unaviable</a>
+                                    <a class="dropdown-item" href="/paneladmin/cancelorder/{{id_o}}/2">Full kitchen</a>
+                                </div>
+                            </div> --}}
+                        </td>
+                        {{!-- <td  class="text-center" >
+                            <input type="checkbox" onclick="stepready('step3_{{id_o}}', {{id_o}})">
+                            <span style="color:green; font-size: 24px;" id="step3_{{id_o}}"></span>
+                        </td> --}}
+
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 text-center tutuloseccion">
+            <h2 style="font-size: 28px">Ordenes finalizadas</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-8">
+            <table class="table table-center">
+                <thead class="table-dark">
+                    <tr class="text-center">
+                        <td>Cliente</td>
+                        <td>Dirección</td>
+                        <td>Detalles</td>
+                        <td>Hora inicio</td>
+                    </tr>
+                </thead>
+                <tbody>
+                     {{#each forders}}
+                    <tr class="text-center">
+                        <td>{{nombre_c}}</td>
+                        <td>{{direccion_c}}</td>
+                        <td><a href="Orderpage.html" style="color: white;"> <button class="btn btn-primary btn-block"> ver mas </button></a></td>
+                        <td>{{hora_o}}</td> 
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

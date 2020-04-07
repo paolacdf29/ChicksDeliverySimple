@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 bg-light form">
+            <h1 class="h1 text-center">Editar producto</h1>
+            <form action="/paneladmin/productos/editproduct" method="POST" enctype="multipart/form-data">
+                {{#each item}}
+                <label for="nmbr" class="mt-5" style="font-size: 20px">Nombre</label>
+                <input type="text" name="nmbr" class="form-control" value="{{Nombre}}" placeholder="Nombre">
+                <label for="descripcion" class="mt-5" style="font-size: 20px">Description</label>
+                <input type="text" name="descripcion" class="form-control" value="{{Descripcion}}" placeholder="Descripcion">
+                <label for="stck" class="mt-5" style="font-size: 20px">Stock</label>
+                <input type="number" name="stck" class="form-control" value="{{stock}}" placeholder="Stock">
+                <label for="precio" class="mt-5" style="font-size: 20px">Price</label>
+                <input type="number" name="precio" class="form-control" value='{{precio}}' placeholder="Precio">
+                <label for="itempic" class="mt-5" style="font-size: 20px">Image</label>
+                <img src="/images/{{pic}}" class="img-fluid mt-5 rounded float-right mb-5" alt="Responsive image" name='itempic'>
+                <div class="form-group mt-5">
+                    <input type="file" multiple name="img_p" value="{{pic}}">
+                </div>
+                <input type="number" name="id_p" value="{{id_p}}" hidden>
+                {{/each}}
+                <button type="submit" class="btn btn-dark btn-block mt-5">GO!</button>
+            
+            </form>
+        </div>
+    </div>
+</div>

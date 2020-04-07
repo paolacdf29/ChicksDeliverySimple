@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class='imgSmall' src="/images/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/userconf">Perfil</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class="nav-link" href="/paneladmin">Panel</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class="nav-link active" href="/paneladmin/productos">Productos</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class="nav-link" href="/kitchen">Cocina</a>
+                <li class="nav-tiem">
+                    <a href="/login/logout" class="nav-link">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+        <div class="row justify-content-center mt-5">
+            <div class="col-8 text-right">
+                <a href="/paneladmin/productos/add">
+                    <p style="font-size: 20px; color: green">Nuevo producto <i class="fas fa-plus"></i></p>
+                </a>
+            </div>
+        </div>
+    <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-8 col-md-10 col-sm-12 text-center">
+            <table class="table table-center rtable">
+                <thead class="table-dark rthead">
+                    <tr class="rtr"> 
+                        <td class='rtd'>Nombre</td> 
+                        <td class='rtd'>Descripcion</td>
+                        <td class='rtd'>Precio</td>
+                        <td class='rtd'>Stock</td>
+                        <td class='rtd'>Compras</td>
+                        <td class='rtd'>Editar</td>
+                    </tr>
+                    
+                </thead>
+                <tbody class="rtbody">
+                    {{#each data}}
+                    <tr class="rtr">
+                        <td class='rtd'>{{Nombre}}</td>
+                        <td class='rtd'>{{Descripcion}}</td>
+                        <td class='rtd'>{{precio}} $</td>
+                        <td class='rtd'>{{stock}} <i class="fas fa-boxes"></i></td>
+                        <td class='rtd'>#</td>
+                        <td class='rtd'>
+                            <a href="/paneladmin/productos/edit/{{id_p}}"><button class="btn btn-primary btn-block">Edit</button></a>
+                            <a href="/paneladmin/productos/delete/{{id_p}}"><button class="btn btn-danger btn-block">Delete</button></a>
+
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

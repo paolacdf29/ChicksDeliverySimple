@@ -1,0 +1,29 @@
+ <div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-xl-8 col-lg-8 col-md-10 col-sm-12 ">
+            <div class="card bg-light mb-3">
+            <div class="card-header">Datos de la orden</div>
+            <div class="card-body">
+                <p style="font-size: 30px;" class="text-center">Order #{{id}}</p>
+                <p class="tituloseccion text-center" >Client info</p>
+                {{#each user}}
+                <p>Name: {{Nombre_client}} {{Apellido_client}}</p>
+                <p>Adress: {{direccion_client}}</p>
+                <p>Phone: {{Telefono_client}} </p>
+                {{/each}}
+                <p class="tituloseccion text-center" >Food ordered</p>
+                {{#each productos}}
+                <p>{{Nombre}}</p>
+                <p class="text-right">Amount: {{canti}}       Price: {{precio}}</p>
+                {{/each}}
+                <p class="text-right" style="font-size: 20px;">Total {{total}}</p>
+                <p class="tituloseccion text-center" >Status</p>
+                <p>Status: {{status}}</p>
+                <p>Starting time: {{activeTime}}</p>
+                <p>Finish time: {{finishTime}}</p>               
+            </div>
+            <a href="/paneladmin"><button class="button btn btn-success btn-block mt-5 mb-5">Back to panel </button></a>
+        </div>
+    </div>
+</div>
+ 

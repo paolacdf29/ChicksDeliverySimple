@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class='imgSmall' src="/images/logo.png" alt=""></a>
+        <button class="navbar-toggler ml-sm-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-sm-auto">
+                <li class="nav-item">
+                    <a class="nav-link mr-2" href="/userconf"><i class="fas fa-cog"></i></a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/login/logout" style="color: grey">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12">
+            <div class="col-12 text-center">
+                <h1>Welcome {{user}}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-around align-items-center mb-5">
+        {{#if orders}}
+        {{#each orders}}
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 mt-3">
+                <div class="card bg-dark text-white mr-5 " >
+                    <div class="card-body">
+                        <h5 class="card-title">You have an order in progress</h5>
+                        <p class="card-text">Order #{{id_d}} Status</p>
+                        <a href="start/onthego/{{id_d}}" class="btn btn-success">See status</a>
+                    </div>
+                </div>
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+       
+    <div class="row justify-content-center align-items-center">
+        <div class="col-lg-8 col-xl-8 col-sm-12 col-md-12 text-center">
+            {{#if alert}}
+            <div class="alert alert-warning">
+                <strong>{{alert}}</strong>
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+            {{/if}}
+            <a href="/start/olddeli"><button type="button" class="btn btn-success btn-block">Continue with the last order</button></a>
+        </div>
+        <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 text-center mb-5">
+            <a href="/start/newdeli"><button type="button" class="btn btn-success mt-5 btn-block">Start a new order</button></a>
+        </div>
+    </div>
+</div>

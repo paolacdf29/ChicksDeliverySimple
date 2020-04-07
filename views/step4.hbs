@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class='imgSmall' src="/images/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/step1">Step 1</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/step2">Step 2</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/step3">Step 3</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link active" href="/step4">Step 4</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/login/logout" style="color: grey">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="cotainer-fluid margins">
+    <div class="row mb-5">
+        <div class="col-xl-10 col-lg-10 col-md-6 col-sm-6">
+            <h1 class="h2">{{title}}</h1>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6" style = 'font-size: 30px'><p>Order # {{order}}</p><a href="/step1/carrito"<i class="fas fa-utensils"></i> {{cart}}</a></div>
+    </div>
+    <div class="row">
+        <div class="col text-danger" ><p>{{msj}}</p></div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>Order confirmed by the restaurant</td>
+                        <td style="color:green; font-size: 30px;">{{st1}}</i></td>
+                    </tr>
+                    <tr>
+                        <td>Order preparation</td>
+                        <td style="color:green; font-size: 30px;">{{st2}}</td>                        
+                    </tr>
+                    <tr>
+                        <td>Order send to the delivery adress</td>
+                        <td style="color:green; font-size: 30px;">{{st3}}</td>                       
+                    </tr>
+                    <tr>
+                        <td>Order completed</td>
+                        <td style="color:green; font-size: 30px;">{{st4}}</td>                        
+                    </tr>
+                </tbody>
+            </table>
+            <a href="/start" class="text-decoration-none ">Go back to the starting page</a>
+        </div>
+    </div>
+</div>
+

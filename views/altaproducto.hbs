@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-10 bg-light form">
+            <h1 class="h1 text-center">Here you can add a product</h1>
+            <form action="/paneladmin/productos/alta" method="POST" enctype="multipart/form-data">
+                <label for="nmbr" class="mt-5" style="font-size: 20px">Nombre</label>
+                <input type="text" name="nmbr" class="form-control" placeholder="Nombre">
+                <label for="descripcion" class="mt-5" style="font-size: 20px">Descripcion</label>
+                <input type="text" name="descripcion" class="form-control" placeholder="Descripcion">
+                <label for="stck" class="mt-5" style="font-size: 20px">Stock</label>
+                <input type="number" name="stck" class="form-control" placeholder="Stock">
+                <label for="precio" class="mt-5" style="font-size: 20px">Precio</label>
+                <input type="number" name="precio" class="form-control" placeholder="Precio">
+                <div class="form-group mt-5">
+                    <input type="file" multiple name="img_p">
+                </div>
+                <input type="number" name="id_p" hidden>
+                <button type="submit" class="btn btn-dark btn-block mt-5">GO!</button>
+            
+            </form>
+        </div>
+    </div>
+</div>

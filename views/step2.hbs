@@ -1,0 +1,108 @@
+{{!-- NavBar --}}
+
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class='imgSmall' src="/images/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link " href="/step1">Step 1</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link active" href="/step2">Step 2</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/step3">Step 3</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/step4">Step 4</a>
+                </li>
+                <li class="nav-tiem">
+                    <a class=" nav-link" href="/login/logout" style="color: grey">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="cotainer-fluid pr-2 pl-2">
+
+{{!-- Titulos --}}
+
+    <div class="row">
+        <div class="col-xl-10 col-lg-10 col-md-6 col-sm-12">
+        <h1 class="h2">{{title}}</h1>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12" style = 'font-size: 30px'>
+        <p>Order # {{order}}</p>
+        </div>    
+    </div>
+
+{{!-- Formulario de info --}}
+
+    <div class="row justify-content-center">
+        <div class="col-xl-8 col-sm-12 formbg">
+            <form method="POST" action="/step2">
+                {{#each info}}
+                <div class="form-group mt-5">
+                    <p class="input-group-text formText">Name: {{Nombre_client}} {{Apellido_client}}</p>
+
+                    <div class="input-group mt-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Address</span>
+                        </div>
+                        <input type="text" class="form-control" value="{{direccion_client}}" name="deli_add" id="address" disabled>
+                        <div class="input-group custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="changeaddress" onclick="changemyaddress()">
+                            <label class="custom-control-label" for="customCheck"><i class="fas fa-pen"></i></label>
+                        </div>
+                    </div>
+
+                    <p class="input-group-text mt-3 formText">Telefono: {{Telefono_client}}</p>
+                {{/each}}
+                    <div class="form-group mt-3">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input class="custom-control-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="custom-control-label" for="exampleRadios1">
+                                Delivery
+                            </label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input class="custom-control-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="custom-control-label" for="exampleRadios2">
+                                Pick up
+                            </label>
+                        </div>
+                    </div>
+
+                    <select name="PUtime" class="custom-select mt-1">
+                        <option value="30 min">As soon as posible</option>
+                        <option value="13hs">13:00</option>
+                        <option value="14hs">14:00</option>
+                        <option value="15hs">15:00</option>
+                        <option value="16hs">16:00</option>
+                        <option value="17hs">17:00</option>
+                        <option value="18hs">18:00</option>
+                        <option value="19hs">19:00</option>
+                        <option value="20hs">20:00</option>
+                    </select>
+                    <input type="text" class="form-control mt-3" placeholder="Write your coments here" name="comentario">
+                    
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <a href="/step1"><button type="button" class="btn btn-success btn-block">Back</button></a>
+                    </div>
+                    <div class="col-8">
+                        <button type="submit" class="btn btn-success btn-block">Next</button>
+                    </div>
+
+                </div>
+            </form>
+            <p style="color: red">{{msj}}</p>
+        </div>
+    </div>
+</div>

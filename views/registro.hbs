@@ -1,0 +1,19 @@
+<div class="row justify-content-center">
+    <div class="col-8 formbg text-center">
+        <h2>Fill with your info</h2>
+        <form method="POST" action="/registro">
+            <div class="form-group mt-5">
+                <input type="text" placeholder="Name" class="form-control mb-2" name="nombre" required>
+                <input type="text" placeholder="Last Name" class="form-control mb-2" name="apellido" required>
+                <input type="number" placeholder="phone number" class="form-control mb-2" name="tlf" required>
+                <input type="text" placeholder="Delivery adress" class="form-control mb-2" name="direc" required>
+                <input type="email" placeholder="e-mail" class="form-control mb-2" name="mail" required>
+                <input type="password" placeholder="Password" class="form-control mb-2" name="pass1" id="pass1" min="4" max="15" required>
+                <input type="password" placeholder="Confirm password" class="form-control mb-2" name="pass2" id="pass2" min="4" max="15" required>
+                <p id="passmatch" style="font-size : 15px"></p>
+            </div>
+            <p class= 'text-danger' >{{msj}}</p>
+            <a href="/step1" style="color:white;"><Button type="submit" class=" btn btn-primary btn-block" id="registrobtn">Next</Button></a>      
+        </form>
+    </div>
+</div>

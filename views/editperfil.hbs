@@ -1,0 +1,17 @@
+<div class="row justify-content-center">
+    <div class="col-8 formbg text-center">
+        <h2>Here you can edit your info</h2>
+        <form method="POST" action="/registro/editar">
+            <div class="form-group mt-5">
+                {{#each person}}
+                <input type="text" placeholder="Name" class="form-control mb-2" name="nombre" value="{{Nombre_client}}">
+                <input type="text" placeholder="Last Name" class="form-control mb-2" name="apellido" value="{{Apellido_client}}">
+                <input type="number" placeholder="phone number" class="form-control mb-2" name="tlf" value="{{Telefono_client}}">
+                <input type="text" placeholder="Delivery adress" class="form-control mb-2" name="direc" value="{{direccion_client}}">
+                <input type="email" placeholder="e-mail" class="form-control mb-2" name="mail" value="{{mail_client}}">
+                {{/each}}
+            </div>
+            <a href="/step1" style="color:white;"><Button type="submit" class=" btn btn-success btn-block" id="registrobtn">Change</Button></a>      
+        </form>
+    </div>
+</div>
